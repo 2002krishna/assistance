@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Website{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Sticky footer styles */
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        body {
+            margin-bottom: 60px; /* Margin bottom by footer height */
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px; /* Set the fixed height of the footer here */
+            line-height: 60px; /* Vertically center the text */
+            background-color: #f5f5f5;
+        }
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .content-wrapper {
+            margin-top: 50px; /* Adjust the margin-top value as needed */
+        }
+        .title {
+            font-family: 'Pacifico', cursive;
+            font-size: 20px;
+            font-style: italic; /* Italic style */
+            color: #107bb1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        .title span {
+            color: #ef8320; /* Orange color */
+        }
+        .login .h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 20px;
+            font-style: italic; /* Italic style */
+            color: #107bb1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        .dropdown {
+            min-width: 15em;
+            position: relative;
+            margin: 2em;
+        }
+        .dropdown * {
+            box-sizing: border-box;
+        }
+        .select {
+            background: #2a2f3b;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px #2a2f3b solid;
+            border-radius: 0.5em;
+            padding: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .select-clicked {
+            border: 2px #26489a solid;
+            box-shadow: 0 0 0.8em #26489a;
+        }
+        
+        .select:hover {
+            background: #323741
+        }
+        
+        .caret {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid #fff;
+            transition: 0.3s;
+        }
+        
+        .caret-rotate {
+            transform: rotate(180deg);
+        }
+        
+        .menu {
+            list-style: none;
+            padding: 0.2em 0.5em;
+            background: #323741;
+            border: 1px #363a43 solid;
+            box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+            border-radius: 0.5em;
+            color: #9fa5b5;
+            position: absolute;
+            top: 3em;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+            opacity: 0;
+            display: none;
+            transition: 0.2s;
+            z-index: 1;
+        }
+        .menu li {
+            padding: 0.7em 0.5em;
+            margin: 0.3em 0;
+            border-radius: 0.5em;
+            cursor: pointer;
+        }
+        
+        .menu li:hover {
+            background: #2a2d35;
+        }
+        
+        .active {
+            background: #23242a;
+        }
+        
+        .menu-open {
+            display: block;
+            opacity: 1;
+        }
+        .select {
+            transition: background 0.3s, border-color 0.3s;
+        }
+        
+        .menu li {
+            transition: background 0.3s;
+        }
+        
+        .menu-open {
+            display: block;
+            opacity: 0;
+            animation: fadeIn 0.3s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .btn {
+            font-size: 12px; 
+        }
+        h4 {
+            color: #107bb1;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .highlights {
+            background-color: #f3f3f3;
+            padding: 20px;
+        }
+        
+        .highlight-item {
+            margin-bottom: 10px;
+        }
+        
+        .highlight-item h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .highlight-item p {
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .links a {
+            color: #ef8320;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            {% load static %}
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" width="70px" height="70px">
+            </a>
+            <div class="title centered">
+                Interview <span>Preparation</span> Assistance
+            </div>
+            <div class="ml-auto">
+                {% if user.is_authenticated %}
+                <span class="navbar-text mr-3">Welcome, {{ user.username }}</span>
+                <a href="{% url 'logout' %}" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                    {% csrf_token %}
+                </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+                    <a href="{% url 'base:authView' %}" class="btn btn-secondary">Register</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container content-wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="text-muted">We are here to lead you to the path of success</span>
+        </div>
+    </footer>
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

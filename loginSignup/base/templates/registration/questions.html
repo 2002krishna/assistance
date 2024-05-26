@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Choose Role{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Choose the Role for Interview Questions</h1>
+    <form id="roleForm">
+        <div class="form-group">
+            <label for="roleSelect">Select Role:</label>
+            <select class="form-control" id="roleSelect" name="role">
+                <option value="data_scientist">Data Scientist</option>
+                <option value="software_engineer">Software Engineer</option>
+                <option value="product_manager">Product Manager</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary" id="generateQuestions"><b>Generate Questions</b></button>
+    </form>
+    <div id="questionsList" class="mt-4"></div>
+</div>
+
+<script>
+document.getElementById('generateQuestions').addEventListener('click', function() {
+    const role = document.getElementById('roleSelect').value;
+    fetch(`/generate_questions/?role=${role}`)
+        .then(response => response.json())
+        .then(data => {
+            const questionsList = document.getElementById('questionsList');
+            questionsList.innerHTML = '';
+            data.questions.forEach(question => {
+                const questionItem = document.createElement('p');
+                questionItem.textContent = question;
+                questionsList.appendChild(questionItem);
+            });
+        });
+});
+</script>
+{% endblock %}

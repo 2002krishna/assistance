@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <h1>Welcome to the Home Page, {{ user.username }}</h1>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-user fa-5x"></i>
+                    <h3 class="card-title mt-3">Learn Different Topics</h3>
+                    <a href="{% url 'base:learningtasks' %}" class="btn btn-primary">Learn a Topic</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-clipboard-list fa-5x"></i>
+                    <h3 class="card-title mt-3">Mock Interview</h3>
+                    <a href="{% url 'base:mockinterview' %}" class="btn btn-primary">Take an Interview</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-cog fa-5x"></i>
+                    <h3 class="card-title mt-3">Company Information</h3>
+                    <a href="{% url 'base:company' %}" class="btn btn-primary">Learn about company</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Choose the company you want to know more about{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Choose the company you want to know more about</h1>
+    <form id="myForm">
+        <div class="dropdown">
+            <div class="select">
+                <span class="selected">Select</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="menu">
+                <li>Amazon</li>
+                <li>TCS</li>
+                <li>JPMorgan</li>
+                <li>Salesforce</li>
+                <li>Cognizant</li>
+                <li>Wipro</li>
+                <li>Infosys</li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-primary" id="submitBtn"><b>Submit</b></button>
+    </form>
+</div>
+{% endblock %}

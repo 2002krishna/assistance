@@ -1,0 +1,351 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+  transition: 0.3s all ease-in-out;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+}
+.bg {
+
+
+
+  position: fixed;
+
+
+
+  top: 0;
+
+
+
+  left: 0;
+
+
+
+  width: 100%;
+
+
+
+  height: 100%;
+
+
+
+  background-image: url("https://jooinn.com/images/job-interview.jpg");
+
+
+
+  background-position: center;
+
+
+
+  background-repeat: no-repeat;
+
+
+
+  background-size: cover;
+
+
+
+  background-attachment: fixed;
+
+}
+
+.shadow-wrap {
+  border-radius: 5px;
+  padding: 25px;
+  background-color: #f0f2fb;
+}
+
+.form-wrap {
+  background-color: #fff;
+  padding: 70px;
+}
+
+.form-wrap form * {
+  display: block;
+  width: 100%;
+}
+
+.form-wrap form label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.form-wrap form input {
+  padding: 12px 20px; /* Decreased padding */
+  border-radius: 5px;
+  border: 1px solid #dae1f5;
+  background: #fff;
+  color: #545d7a;
+}
+
+#id_username {
+  margin-bottom: 20px;
+}
+
+.form-wrap button {
+  border-radius: 5px;
+  background: #10182f;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  padding: 12px 68px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  margin-top: 30px;
+  line-height: 26px;
+}
+
+.signup-link {
+  color: #10182f;
+  font-size: 15px;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 25px;
+  display: block;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.form-wrap button:hover {
+  background-color: #fff;
+  color: #10182f;
+  border-color: #10182f;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.bg {
+  height: 100%;
+  background-image: url("https://jooinn.com/images/job-interview.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.wrapper {
+  margin-top: 30px;
+  margin-left: 480px;
+  width: 500px;
+  height: 320px;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  padding: 30px 40px;
+  color: black;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgb(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+}
+
+.wrapper .btn {
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin-top: 20px 0 15px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text */
+  background-color: #f5f5f5;
+}
+
+.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  font-style: italic; /* Italic style */
+  color: #107bb1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.title span {
+  color: #ef8320; /* Orange color */
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-size: cover
+}
+
+body {
+  background-image:url('https://jooinn.com/images/job-interview.jpg');
+  font-family: Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-position: center;
+  background-repeat:repeat-x;
+  background-size: cover;
+}
+.dropdown {
+  min-width: 15em;
+  position: relative;
+  margin: 2em;
+}
+.dropdown * {
+  box-sizing: border-box;
+}
+.select {
+  background: #2a2f3b;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px #2a2f3b solid;
+  border-radius: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.select-clicked {
+  border: 2px #26489a solid;
+  box-shadow: 0 0 0.8em #26489a;
+}
+
+.select:hover {
+  background: #323741
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  transition: 0.3s;
+}
+
+.caret-rotate {
+  transform: rotate(180deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  background: #323741;
+  border: 1px #363a43 solid;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  color: #9fa5b5;
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+.menu li {
+  padding: 0.7em 0.5em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background: #2a2d35;
+}
+
+.active {
+  background: #23242a;
+}
+
+.menu-open {
+  display: block;
+  opacity: 1;
+}
+.select {
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.menu li {
+  transition: background 0.3s;
+}
+
+.menu-open {
+  display: block;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+.btn {
+  font-size: 12px; 
+}

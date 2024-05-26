@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Choose the topic you want to Learn{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Choose the topic you want to Learn</h1>
+    <form id="myForm">
+        <div class="dropdown">
+            <div class="select">
+                <span class="selected">Select</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="menu">
+                <li>Spark</li>
+                <li>Java</li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-primary" id="submitBtn"><b>Submit</b></button>
+    </form>
+</div>
+{% endblock %}
